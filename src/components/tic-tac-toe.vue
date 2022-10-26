@@ -76,6 +76,8 @@ export default {
 
         //Check if winner
         this.isThreeInRow();
+
+        if(this.threeInRow) this.restartGame();
       }
     },
     isThreeInRow(){
@@ -100,7 +102,7 @@ export default {
       if(this.gameBoard[0][0] === player && this.gameBoard[1][1] === player && this.gameBoard[2][2] === player) win = true;
 
       //Diagonal right to left
-      if(this.gameBoard[0][3] === player && this.gameBoard[1][1] === player && this.gameBoard[2][0] === player) win = true;
+      if(this.gameBoard[0][2] === player && this.gameBoard[1][1] === player && this.gameBoard[2][0] === player) win = true;
 
       this.threeInRow = win;
     }
